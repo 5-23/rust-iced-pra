@@ -1,12 +1,13 @@
 use iced::{Sandbox, widget::text, Settings};
-// use iced::widget::text;
+use iced::widget::text_input;
 fn main() -> iced::Result {
     Editor::run(Settings::default())
 }
 
+#[derive(Debug, Clone)]
 struct Editor;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 enum Message{}
 
 impl Sandbox for Editor{
@@ -26,6 +27,6 @@ impl Sandbox for Editor{
     }
 
     fn view(&self) -> iced::Element<'_, Self::Message> {
-        text("hello world!").into()
+        text_input("input here", "").into()
     }
 }
